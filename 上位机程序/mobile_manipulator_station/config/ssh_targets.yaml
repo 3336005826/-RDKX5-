@@ -1,0 +1,8 @@
+ssh_targets:
+  key_type: ed25519
+  targets:
+    - name: rdkx5
+      host: sunrise@192.168.1.142
+    - name: jetson
+      # 机械臂 Jetson 地址；知道 IP 后建议改成 jetson@机械臂IP
+      host: jetson@192.168.1.205

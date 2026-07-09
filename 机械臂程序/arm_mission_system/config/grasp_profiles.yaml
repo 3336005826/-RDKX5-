@@ -1,0 +1,39 @@
+grasp_executor:
+  ros__parameters:
+    drop_mode: single_bag
+    drop_label: Old_school_bag
+    joint1: -90
+    joint2: 0
+    joint3: 0
+    joint4: -83
+    joint5: -6
+    joint6: -1
+    default_profile:
+      approach_z: 170
+      grasp_z: 115
+    label_aliases:
+      cardboard: cardboard
+      glass: glass
+      metal: metal
+      organic: organic
+      paper: paper
+      plastic: plastic
+    grasp_profiles:
+      cardboard:
+        approach_z: 175
+        grasp_z: 140
+      glass:
+        approach_z: 175
+        grasp_z: 140
+      metal:
+        approach_z: 175
+        grasp_z: 140
+      organic:
+        approach_z: 175
+        grasp_z: 140
+      paper:
+        approach_z: 175
+        grasp_z: 140
+      plastic:
+        approach_z: 175
+        grasp_z: 140

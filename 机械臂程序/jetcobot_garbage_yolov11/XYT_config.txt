@@ -1,0 +1,5 @@
+joint1=39
+joint4=-73
+joint5=-7
+joint6=-3
+thresh=155

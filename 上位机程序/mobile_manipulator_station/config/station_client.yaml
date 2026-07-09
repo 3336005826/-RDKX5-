@@ -1,0 +1,15 @@
+station_client:
+  rosbridge_url: ws://192.168.1.142:9090
+  rdk_host: sunrise@192.168.1.142
+  rdk_workspace: /home/sunrise/test_ws
+  # 机械臂 Jetson 地址。可以写主机名，也可以直接写 IP，例如 jetson@192.168.1.205
+  jetson_host: jetson@192.168.1.205
+  jetson_workspace: /home/jetson/jetcobot_ws
+  auto_start_arm_remote: true
+  map_yaml: /home/sunrise/test_ws/saved_maps/map.yaml
+  map_save_stem: /home/sunrise/test_ws/saved_maps/map
+  robot_urdf_path: /home/yang/test_ws/src/wheeltec_robot_urdf/wheeltec_robot_urdf/urdf/R550A_PLUS_4wd_arm_robot.urdf
+  mapping_command: source /opt/ros/humble/setup.bash && source /home/sunrise/test_ws/install/setup.bash && ros2 launch robot_rtab wheeltec_nav2_rtab.launch.py localization:=false
+  nav_command: source /opt/ros/humble/setup.bash && source /home/sunrise/test_ws/install/setup.bash && ros2 launch car_mission_system car_bringup.launch.py localization:=true map:=/home/sunrise/test_ws/saved_maps/map.yaml
+  shuttle_command: source /opt/ros/humble/setup.bash && source /home/sunrise/test_ws/install/setup.bash && ros2 launch car_mission_system car_bringup.launch.py localization:=true map:=/home/sunrise/test_ws/saved_maps/map.yaml
+  arm_command: export ROS_DOMAIN_ID=30 && export ROS_LOCALHOST_ONLY=0 && source /opt/ros/humble/setup.bash && source /home/jetson/jetcobot_ws/install/setup.bash && ros2 launch arm_mission_system arm_bringup.launch.py model_path:=/home/jetson/jetcobot_ws/src/jetcobot_grasp/Dataset/runs/detect/train/weights/best.engine camera_device:=/dev/video1 camera_reopen_sec:=2.0 publish_debug_view:=true publish_debug_topic:=true confidence_threshold:=0.8 auto_pick_from_detector:=true min_pick_interval_sec:=60.0 use_cpp_executor:=true enable_base_assist:=true wait_for_watch_pose_ready:=true joint1:=-90 joint2:=20 joint3:=-20 joint4:=-60 joint5:=0 joint6:=-45 watch_joint1:=-90 watch_joint2:=-45 watch_joint3:=10 watch_joint4:=-45 watch_joint5:=0 watch_joint6:=-45 grasp_target_swap_xy:=true grasp_target_x_sign:=1.0 grasp_target_y_sign:=1.0 grasp_target_x_offset:=0.05 grasp_target_y_offset:=0.0 use_bridge_grasp_pose:=true grasp_rx:=-150.0 grasp_ry:=10.0 grasp_rz:=-45.0 plastic_approach_z:=175 plastic_grasp_z:=140 use_custom_drop_joints:=true return_after_drop:=false drop_joint1:=110 drop_joint2:=-20 drop_joint3:=10 drop_joint4:=-20 drop_joint5:=0 drop_joint6:=-45
